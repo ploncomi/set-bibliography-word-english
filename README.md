@@ -4,4 +4,4 @@ set_bibliography_word_english.cpp: Program to add english language to word bibli
 
 APASixthEditionOfficeOnlinePL.xsl: Style for APA citation:  Authors (year)
 
-For compiling cpps, download of ploncomi/python_like_cpp is required
+For compiling cpps, download of https://github.com/ploncomi/python_like_cpp is required
