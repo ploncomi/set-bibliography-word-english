@@ -1,8 +1,8 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
-#include "python_like/split_strip.h"
-#include "python_like/in_operator.h"
+#include "../python_like/split_strip.h"
+#include "../python_like/in_operator.h"
 
 int main(int argc, char *argv[])
 {
@@ -21,15 +21,10 @@ int main(int argc, char *argv[])
   	std::cout << "This executable needs a file with extension xml" << std::endl;
   	return 0;
   }
-  std::vector<std::string> nametok = split(argv[1], {"."});
+  std::vector<std::string> nametok = split(argv[1], ".");
   nametok[nametok.size()-2] = nametok[nametok.size()-2] + "_english";
 
-  std::string name;
-  for (size_t i=0; i<nametok.size()-1; i++)
-  {
-  	name = name + nametok[i] + ".";
-  }
-  name = name + nametok[nametok.size()-1];
+  std::string name = join(".", nametok);
 
   std::ifstream f_in(argv[1]);
   std::ofstream f_out(name);
